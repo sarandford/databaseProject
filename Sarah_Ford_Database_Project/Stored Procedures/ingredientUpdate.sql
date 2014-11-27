@@ -1,0 +1,2 @@
+create procedure updateIngredients(IN recipe_id int,IN old_food_id int,IN new_food_id int,IN qty decimal,In unit varchar(255))
+ UPDATE `Ingredients` SET food_id=new_food_id,qty=qty,unit=unit WHERE recipe_id=recipe_id and food_id=old_food_id;

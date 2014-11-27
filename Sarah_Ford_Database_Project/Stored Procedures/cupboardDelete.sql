@@ -1,0 +1,2 @@
+create procedure cupboardDelete(IN cookID int, IN foodName varchar(255))
+begin select @x:=id from Food where foodName = Food.name; delete from Cupboard where Cupboard.food_id=@x and Cupboard.cook_id = cookID; end

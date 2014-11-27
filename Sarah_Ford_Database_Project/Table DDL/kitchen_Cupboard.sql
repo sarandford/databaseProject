@@ -1,0 +1,57 @@
+CREATE DATABASE  IF NOT EXISTS `kitchen` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `kitchen`;
+-- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
+--
+-- Host: 23.229.206.34    Database: kitchen
+-- ------------------------------------------------------
+-- Server version	5.5.36-cll-lve
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Cupboard`
+--
+
+DROP TABLE IF EXISTS `Cupboard`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Cupboard` (
+  `cook_id` int(11) NOT NULL,
+  `food_id` int(11) NOT NULL,
+  PRIMARY KEY (`cook_id`,`food_id`),
+  KEY `cook_id` (`cook_id`),
+  KEY `fk_idx` (`food_id`),
+  CONSTRAINT `fk` FOREIGN KEY (`food_id`) REFERENCES `Food` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `cook` FOREIGN KEY (`cook_id`) REFERENCES `Cooks` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Cupboard`
+--
+
+LOCK TABLES `Cupboard` WRITE;
+/*!40000 ALTER TABLE `Cupboard` DISABLE KEYS */;
+INSERT INTO `Cupboard` VALUES (9,19),(9,20),(9,23),(9,24),(9,26),(9,27),(9,28),(9,29),(9,31),(9,38),(9,39),(9,48),(9,67),(9,73),(69,22),(69,24),(71,1),(71,26),(71,27),(71,28),(72,51),(72,66),(72,68),(72,69),(72,70),(72,71),(72,72);
+/*!40000 ALTER TABLE `Cupboard` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-11-24 11:28:54
