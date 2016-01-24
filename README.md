@@ -1,6 +1,4 @@
 databaseProject
 ===============
-Here is the future home of a side project I am working on creating a website and (in the future) mobile application
-that will store food purchases and recipes and reccomend recipes based on food purchases.  Check back soon for more
-updates! 
-Thanks
+This is the project which I completed for Database concepts 332 at the College of Charleston. Its PHP is rudiementary but the SQL is well executed. This was my frist SQL project and taught me how to design relational databases and normalize schemas and make them secure etc. 
+Completed in Dec. 2014
